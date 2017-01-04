@@ -14,11 +14,18 @@ Thesaurus::~Thesaurus() {}
 bool Thesaurus::init(std::string& text) {
     //_index.at(1);
     Position _position = {1, 0, 0};
+    int _line_tmp = 0;
     while (_position.end < text.length()){
-       if((_position.end=text.find("\t",_position.start))){
+        _line_tmp = text.find("\n",_position.start);
+
+        if((_position.end=text.find("\t",_position.start)) < _line_tmp){
             _index.push_back(_position);
             _position.start = _position.end;
             ++_position.column;
+        } else {
+            _index.push_back(_position);
+            _position.start = _position.end;
+            _position.column = 0;
         }
     }
 }
