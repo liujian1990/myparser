@@ -16,8 +16,9 @@ public:
     ~Thesaurus();
     bool init(std::string& text);
 
-    template <class T>
-    bool get_value(int row, int column,T* result);
+//    template <class T>
+//    bool get_value(int row, int column,T* result);
+    bool get_value(int row, int column,void* result);
 
 private:
     struct Position{

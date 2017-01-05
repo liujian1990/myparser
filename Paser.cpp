@@ -5,21 +5,45 @@
 #include "Paser.h"
 #include <limits.h>
 #include <math.h>
+#include <stdlib.h>
+#include <exception>
+#include <iostream>
 Paser::Paser() {
 
 };
 
-Paser::~Paser() {
+Paser::~Paser() { };
 
+bool paser(std::string token, void* value){
+    return paser(token, value);
 };
 
 bool Paser::paser(std::string token, int &value) {
-    value = atoi(token.c_str());
-    if(value ==  (INT_MAX || INT_MIN) ){
+
+    //std::string::size_type _sz = 0;
+    try {
+        std::stoi(token, nullptr);
+    } catch(const std::exception &e) {
+        std::cerr << "Paser error (" << e.what() << ")\n";
         return false;
     }
+
     return true;
 
+};
+
+
+bool Paser::paser(std::string token, float &value) {
+    std::string::size_type _sz = 0;
+
+    try {
+        value = std::stof(token, &_sz);
+    } catch(const std::exception &e) {
+        std::cerr << "Paser error (" << e.what() << ")\n";
+        return false;
+    }
+
+    return true;
 };
 
 bool Paser::paser(std::string token, char *value) {
@@ -27,15 +51,6 @@ bool Paser::paser(std::string token, char *value) {
         return false;
     }
     value = const_cast<char*>(token.c_str());
-    return true;
-};
-
-bool Paser::paser(std::string token, float &value) {
-    value = atof(token.c_str());
-    if(value ==  HUGE_VAL ){
-        return false;
-    }
-
     return true;
 };
 

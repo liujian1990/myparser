@@ -11,6 +11,7 @@ Thesaurus::Thesaurus(){
 
 Thesaurus::~Thesaurus() {}
 
+//生成目录
 bool Thesaurus::init(std::string& text) {
     //_index.at(1);
     Position _position = {1, 0, 0};
@@ -30,10 +31,9 @@ bool Thesaurus::init(std::string& text) {
     }
 }
 
-template <class T>
-bool Thesaurus::get_value(int row, int column,T* result){
+bool Thesaurus::get_value(int row, int column,void * result){
     std::string _text;
-
+//_text 根据输入切片
     return Paser::paser(_text, result);
 };
 
