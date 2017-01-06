@@ -24,8 +24,9 @@ void test(){
             "hellob\n"\
             "3:11,123,00\t111\t1.69\thello\t2:ai,bi\n";
     Thesaurus text;
-    UserType mytypea;
-    mytypea.paser_callbak();
+    //UserType< UserStruct > mytype1;
+
+
     int value_1 = 0;
     text.get_value(1,1,&value_1);
     float value_2 = 0.0;

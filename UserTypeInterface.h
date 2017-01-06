@@ -7,11 +7,11 @@
 
 #include <string>
 
-class UserTypeInterface {
-public:
-    template <typename T>
-    virtual void Userpaser(std::string token, T) = 0;
-
-};
+//class UserTypeInterface {
+//public:
+//    template <typename T>
+////    virtual void Userpaser(std::string token, T) = 0;
+//
+//};
 
 #endif //MYPARSER_USERTYPEINTERFACE_H

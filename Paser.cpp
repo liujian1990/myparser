@@ -54,6 +54,8 @@ bool Paser::paser(std::string token, char *value) {
     return true;
 };
 
-bool Paser::paser(std::string token, UserType value) {
-    return true;
-};
+//bool Paser::paser(std::string token, UserType<auto> value) {
+//  //  value.Userpaser(token,value.);
+//    (*value._parser)(token, value);
+//    return true;
+//};

@@ -7,6 +7,7 @@
 
 Thesaurus::Thesaurus(){
     _index = {};
+    _paser = nullptr;
 }
 
 Thesaurus::~Thesaurus() {}
@@ -35,7 +36,7 @@ bool Thesaurus::init(std::string& text) {
 //    std::string _text;
 //    int a;
 ////_text 根据输入切片
-// //   return Paser::paser(_text, result);
+//    return _paser->paser(_text,);paser(_text, result);
 //};
 
 
