@@ -7,7 +7,16 @@
 
 
 class UserType {
+public:
+    UserType();
+    ~UserType();
+    bool paser(){
 
+    };
+    template <class T>
+    bool paser_callbak(){
+
+    }
 };
 
 
