@@ -12,9 +12,9 @@ class Paser {
 public:
     Paser();
     ~Paser();
-    static bool paser(std::string token, void* value);
-    static bool paser(std::string token, int& value);
-    static bool paser(std::string token, float& value);
+ //   static bool paser(std::string token, void* value);
+    static bool paser(std::string token, int* value);
+    static bool paser(std::string token, float* value);
     static bool paser(std::string token, char* value);
     static bool paser(std::string token, UserType value);
 };

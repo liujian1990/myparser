@@ -14,15 +14,15 @@ Paser::Paser() {
 
 Paser::~Paser() { };
 
-bool paser(std::string token, void* value){
-    return paser(token, value);
-};
+//bool paser(std::string token, void* value){
+//    return paser(token, value);
+//};
 
-bool Paser::paser(std::string token, int &value) {
+bool Paser::paser(std::string token, int* value) {
 
     //std::string::size_type _sz = 0;
     try {
-        std::stoi(token, nullptr);
+        *value = std::stoi(token, nullptr);
     } catch(const std::exception &e) {
         std::cerr << "Paser error (" << e.what() << ")\n";
         return false;
@@ -33,11 +33,11 @@ bool Paser::paser(std::string token, int &value) {
 };
 
 
-bool Paser::paser(std::string token, float &value) {
+bool Paser::paser(std::string token, float* value) {
     std::string::size_type _sz = 0;
 
     try {
-        value = std::stof(token, &_sz);
+        *value = std::stof(token, &_sz);
     } catch(const std::exception &e) {
         std::cerr << "Paser error (" << e.what() << ")\n";
         return false;

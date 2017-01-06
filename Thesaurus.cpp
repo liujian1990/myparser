@@ -31,10 +31,11 @@ bool Thesaurus::init(std::string& text) {
     }
 }
 
-bool Thesaurus::get_value(int row, int column,void * result){
-    std::string _text;
-//_text 根据输入切片
-    return Paser::paser(_text, result);
-};
+//bool Thesaurus::get_value(int row, int column,void * result){
+//    std::string _text;
+//    int a;
+////_text 根据输入切片
+// //   return Paser::paser(_text, result);
+//};
 
 

@@ -10,15 +10,21 @@
 #include <string>
 #include <vector>
 #include <array>
+#include "Paser.h"
 class Thesaurus {
 public:
     Thesaurus();
     ~Thesaurus();
     bool init(std::string& text);
 
-//    template <class T>
-//    bool get_value(int row, int column,T* result);
-    bool get_value(int row, int column,void* result);
+    template <class T>
+    bool get_value(int row, int column,T* result){
+        std::string _text;
+        int a;
+//_text 根据输入切片
+        return Paser::paser(_text, result);
+    };
+//    bool get_value(int row, int column,void* result);
 
 private:
     struct Position{
