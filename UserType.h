@@ -19,8 +19,8 @@ public:
 //    bool type_registe(int a){
 //        decltype(a);
 //    }
-   // template<class ValueType>
-    typedef bool (*callback)(std::string, auto);
+    template<class ValueType>
+    typedef bool (*callback)(std::string, ValueType);
     callback _parser;
 
     void bindpaser(callback f){
