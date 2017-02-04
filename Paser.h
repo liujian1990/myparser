@@ -8,22 +8,18 @@
 #pragma once
 #include <string>
 #include "UserType.h"
-#include "UserTypeInterface.h"
 class Paser {
 public:
     Paser();
-    ~Paser();
+    virtual ~Paser();
  //   static bool paser(std::string token, void* value);
      bool paser(std::string token, int* value);
      bool paser(std::string token, float* value);
      bool paser(std::string token, char* value);
-//    static bool paser(std::string token, UserTypeInterface value);
-     bool paser(std::string token, UserType value){
-        return (*value._parser)(token, value);
-     };
-     bool paser(std::string token,auto* value){
 
-     }
+     bool paser(std::string token, UserType* value){
+         return value->_paser(token,value->_data);
+    };
 };
 
 

@@ -6,26 +6,13 @@
 #define MYPARSER_USERTYPEFACTORY_H
 
 #include "UserType.h"
-
+#include <functional>
 class UserTypeFactory {
 public:
-    template <class T>
-    bool creat_type(T){
-        _hash = typeid(T).hash_code();
-        _uertype = new UserType();
-    }
-
-    template <class T>
-    UserType* get_type(T){
-        if(typeid(T).hash_code() == _hash){
-            return _uertype;
-        }
-    }
-
-private:
-    static size_t _hash;
-    UserType* _uertype;
-
+    template<typename ValueType>
+    UserType* creator(std::function<bool (std::string, ValueType)> call){
+        return new UserType(call);
+    };
 };
 
 #endif //MYPARSER_USERTYPEFACTORY_H

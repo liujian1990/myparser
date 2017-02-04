@@ -6,30 +6,25 @@
 #define MYPARSER_USERTYPE_H
 #pragma once
 #include <regex>
-#include "UserTypeInterface.h"
-#include "Holder.h"
+
+struct UType{
+    int flag;
+    long long len;
+    unsigned char* data;
+};
+
 class UserType {
 public:
-//    UserType() : _content(nullptr){};
-//    template<typename ValueType>
-//    UserType(const ValueType& value) : _content(new Holder<ValueType>(value)){};
-//    ~UserType(){
-//       delete _content;
-//    }
-//    bool type_registe(int a){
-//        decltype(a);
-//    }
-    template<class ValueType>
-    typedef bool (*callback)(std::string, ValueType);
-    callback _parser;
-
-    void bindpaser(callback f){
-        _parser = f;
-    }
-private:
-//    typedef ValueType _type;
-//    _type value;
-  //  PlaceHolder* _content;
+    template<typename ValueType>
+    UserType (std::function<bool (std::string, ValueType)> call){
+        _paser = call;
+        _data = nullptr;
+    };
+    ~UserType();
+    template<typename ValueType>
+    std::function<bool (std::string, ValueType)> _paser;
+    template<typename ValueType>
+    ValueType* _data;
 
 };
 

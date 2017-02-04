@@ -17,9 +17,7 @@ public:
     Thesaurus();
     ~Thesaurus();
     bool init(std::string& text);
-    bool creatpaser(UserType& usertype){
-        _paser= new Paser();
-    };
+
     template <class T>
     bool get_value(int row, int column,T* result){
         std::string _text;

@@ -2,6 +2,7 @@
 #include <string>
 #include "Thesaurus.h"
 #include "UserType.h"
+#include <type_traits>
 
 enum FLAG{
     OK,
